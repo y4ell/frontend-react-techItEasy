@@ -2,10 +2,10 @@ import './App.css';
 import soldTv from "./Helpers/soldTv.js";
 import boughtTvs from "./Helpers/boughtTvs.js";
 import toBeSold from "./Helpers/toBeSold.js";
-import tvName from "./Helpers/tvName.js";
 import {bestSellingTv, inventory} from "./constants/inventory.js";
+import tvName from "./Helpers/tvName.js";
 import priceFormat from "./Helpers/priceFormat.js";
-import tvScreensize from "./Helpers/tvScreensizes.js";
+import tvScreensize from "./Helpers/tvScreensizes.js"
 
 
 function App() {
@@ -18,23 +18,33 @@ function App() {
 
   <div className="products">
     <h3>Aantal verkochte producten</h3>
-  <p>{soldTv()}</p>
+  <p>{soldTv(inventory)}</p>
   </div>
 
   <div className="products">
   <h3>Aantal ingekochte producten</h3>
-  <p>{boughtTvs()}</p>
+  <p>{boughtTvs(inventory)}</p>
   </div>
 
   <div className="products">
   <h3>Aantal te verkopen producten</h3>
-    <p>{toBeSold()}</p>
+    <p>{toBeSold(inventory)}</p>
   </div>
       </div>
 
-        <p>{tvName(bestSellingTv)}</p>
-        <p>{priceFormat(bestSellingTv.price)}</p>
-        <p>{tvScreensize(bestSellingTv.availableSizes)}</p>
+        <div className="tvInfo">
+          <span className="product-image">
+          <img src={bestSellingTv.sourceImg} alt="Afbeelding van het product"/>
+            </span>
+        <div className="tvInfoText">
+          <p>{tvName(bestSellingTv)}</p>
+        <p>{priceFormat(bestSellingTv)}</p>
+          <p>{tvScreensize(bestSellingTv.availableSizes)}</p>
+        </div>
+        </div>
+
+
+
         </>)
 }
 

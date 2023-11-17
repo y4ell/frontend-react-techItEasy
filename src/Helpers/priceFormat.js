@@ -1,5 +1,5 @@
-function priceFormat(price) {
-    return (`€ ${price},-`)
+function priceFormat(tvInput) {
+    return (`€ ${tvInput.price},-`)
 }
 
 export default priceFormat

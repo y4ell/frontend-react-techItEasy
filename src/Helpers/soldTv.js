@@ -1,14 +1,13 @@
 import {bestSellingTv, inventory} from "../constants/inventory.js";
 
-function soldTv(){
-    let totalSold = 0
+function soldTv(productArray){
+    let total = 0
     {
-        for (let i = 0; i < inventory.length; i++) {
-            totalSold += inventory[i].sold;
+        for (let i = 0; i < productArray.length; i++) {
+            total = total + productArray[i].sold;
         }
-        return totalSold
+        return total;
     }
 }
 
 export default soldTv
-
